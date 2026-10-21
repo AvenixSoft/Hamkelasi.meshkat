@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#00bcc2">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="همکلاسی">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -68,15 +68,20 @@
       user-select: none;
     }
 
-    html, body {
+    html, html, body {
+      margin: 0;
+      padding: 0;
       width: 100%;
       height: 100%;
-      background-color: #e4ecef;
-      font-family: var(--font-family);
+      height: 100dvh;
+      background-color: var(--primary-teal);
+      font-family: 'IRANSans', var(--font-family);
       direction: rtl;
-      color: var(--text-dark);
-      overflow: hidden;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      overscroll-behavior-y: none;
     }
 
     /* Main responsive wrapper optimized for iPhone 16 Pro Max / 17 Pro Max */
@@ -131,12 +136,12 @@
       flex: 1;
       overflow-y: auto;
       overflow-x: hidden;
-      padding: 12px 14px 94px 14px;
+      padding: 12px 14px calc(86px + env(safe-area-inset-bottom, 0px)) 14px;
       -webkit-overflow-scrolling: touch;
     }
 
     .screen-body.no-nav-padding {
-      padding-bottom: 24px;
+      padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
     }
 
     .screen-body::-webkit-scrollbar {
@@ -151,16 +156,81 @@
        - RIGHT: Hamburger Menu (3 bars)
        - CENTER: Hamkelasi Logo
        - LEFT: Notification Bell */
+    
+
+    
+    /* ==========================================================
+       HEADERS (SAFE AREA & DYNAMIC ISLAND ADAPTATION)
+       ========================================================== */
     .main-app-header {
-      height: 64px;
+      padding-top: env(safe-area-inset-top, 0px);
+      height: calc(64px + env(safe-area-inset-top, 0px));
       background: var(--primary-teal);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
+      padding-left: 16px;
+      padding-right: 16px;
       position: relative;
       z-index: 20;
       flex-shrink: 0;
+      box-sizing: border-box;
+    }
+
+    .sub-app-header {
+      padding-top: env(safe-area-inset-top, 0px);
+      height: calc(56px + env(safe-area-inset-top, 0px));
+      background: var(--primary-teal);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 14px;
+      padding-right: 14px;
+      color: #ffffff;
+      z-index: 20;
+      flex-shrink: 0;
+      border-bottom: none;
+      box-sizing: border-box;
+    }
+
+    .chat-top-header {
+      background: var(--primary-teal);
+      padding: calc(10px + env(safe-area-inset-top, 0px)) 12px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-shrink: 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .account-top-header,
+    .settings-top-header {
+      padding-top: env(safe-area-inset-top, 0px);
+      height: calc(60px + env(safe-area-inset-top, 0px));
+      background: var(--primary-teal);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 16px;
+      padding-right: 16px;
+      position: relative;
+      z-index: 20;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+
+    .history-curved-header {
+      background: var(--primary-teal);
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+      padding: calc(16px + env(safe-area-inset-top, 0px)) 16px 22px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      flex-shrink: 0;
+      box-sizing: border-box;
     }
 
     .header-col-right {
@@ -242,18 +312,7 @@
     }
 
     /* Sub-page Headers (Back button on RIGHT, Title in CENTER, Actions on LEFT) */
-    .sub-app-header {
-      height: 56px;
-      background: var(--primary-teal);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 14px;
-      color: #ffffff;
-      z-index: 20;
-      flex-shrink: 0;
-      border-bottom: none;
-    }
+    
 
     .sub-app-header .header-col-right .sub-back-btn {
       background: transparent;
@@ -392,22 +451,28 @@
     /* ==========================================================
        BOTTOM NAVIGATION BAR (EXACT CROPPED PNG ICONS)
        ========================================================== */
+    /* ==========================================================
+       BOTTOM NAVIGATION (MATCHING EXACT 101.PNG)
+       ========================================================== */
     .bottom-nav-bar {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 80px;
+      height: calc(72px + env(safe-area-inset-bottom, 0px));
+      min-height: 72px;
+      box-sizing: border-box;
       background: #ffffff;
-      border-top-left-radius: 22px;
-      border-top-right-radius: 22px;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-evenly;
-      padding: 0 6px;
-      padding-bottom: max(8px, env(safe-area-inset-bottom));
-      box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.07);
+      padding: 14px 10px 0 10px;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
       z-index: 50;
+      overflow: hidden;
     }
 
     .nav-tab-btn {
@@ -417,10 +482,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0;
-      height: 60px;
+      padding: 0 4px;
+      height: 42px;
+      max-height: 42px;
+      min-width: 46px;
       flex: 0 0 auto;
       transition: transform 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .nav-tab-btn:active {
@@ -429,17 +497,20 @@
 
     .nav-tab-btn .tab-active-img {
       display: none;
-      height: 58px;
+      height: 41px;
+      max-height: 41px;
       width: auto;
       object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0, 188, 194, 0.22));
     }
 
     .nav-tab-btn .tab-inactive-img {
       display: block;
-      height: 44px;
-      width: 44px;
+      height: 24px;
+      width: auto;
+      max-height: 24px;
       object-fit: contain;
-      opacity: 0.95;
+      opacity: 0.90;
     }
 
     .nav-tab-btn.active .tab-active-img {
@@ -1837,16 +1908,7 @@
     /* ==========================================================
        SCREEN: CHAT & MEDIA SEARCH
        ========================================================== */
-    .chat-top-header {
-      background: var(--primary-teal);
-      padding: 10px 12px 12px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex-shrink: 0;
-      box-sizing: border-box;
-      width: 100%;
-    }
+    
 
     .chat-action-row {
       display: flex;
@@ -2070,17 +2132,7 @@
     /* ==========================================================
        SCREEN: USER ACCOUNT (حساب کاربری - EXACT MATCHING SCREENSHOT)
        ========================================================== */
-    .account-top-header {
-      height: 60px;
-      background: var(--primary-teal);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
-      position: relative;
-      z-index: 20;
-      flex-shrink: 0;
-    }
+    
 
     .account-header-right {
       display: flex;
@@ -2334,18 +2386,7 @@
     /* ==========================================================
        SCREEN: SETTINGS (تنظیمات - EXACT MATCHING SCREENSHOT)
        ========================================================== */
-    .settings-top-header {
-      height: 60px;
-      background: var(--primary-teal);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
-      position: relative;
-      z-index: 20;
-      flex-shrink: 0;
-      transition: background 0.3s ease;
-    }
+    
 
     .settings-header-right {
       display: flex;
@@ -2767,18 +2808,7 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    .history-curved-header {
-      background: var(--primary-teal);
-      border-bottom-left-radius: 36px;
-      border-bottom-right-radius: 36px;
-      padding: 16px 16px 22px 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      flex-shrink: 0;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    }
+    
 
     .history-back-btn {
       position: absolute;
@@ -7007,5 +7037,5 @@ function setYear(val) {
       </div>
     </div>
 
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4e1cd861bb93e80',t:'MTc5MjYwMTg2Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
