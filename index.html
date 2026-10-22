@@ -457,6 +457,9 @@
         /* ==========================================================
        BOTTOM NAVIGATION (PERFECT VECTOR & TYPOGRAPHY)
        ========================================================== */
+        /* ==========================================================
+       BOTTOM NAVIGATION (EXACT SCREENSHOT ICONS & CRISP TYPOGRAPHY)
+       ========================================================== */
     .bottom-nav-bar {
       position: absolute;
       bottom: 0;
@@ -497,7 +500,7 @@
       transform: scale(0.96);
     }
 
-    /* Active Pill: Crisp Teal Capsule with Bold Text and Icon */
+    /* Active Pill: Crisp Teal Capsule with Bold Text and Exact White Icon */
     .nav-tab-btn .tab-active-pill {
       display: none;
       background: var(--primary-teal);
@@ -512,12 +515,13 @@
       white-space: nowrap;
     }
 
-    .nav-tab-btn .tab-active-pill .tab-pill-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
+    .nav-tab-btn .tab-active-pill .tab-pill-icon-img {
+      height: 22px;
+      width: auto;
+      max-width: 26px;
+      object-fit: contain;
       flex-shrink: 0;
+      display: block;
     }
 
     .nav-tab-btn .tab-active-pill .tab-pill-text {
@@ -529,23 +533,23 @@
       line-height: 1;
     }
 
-    /* Inactive Icon: Slate Grey Vector */
-    .nav-tab-btn .tab-inactive-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #72828e;
-      width: 44px;
-      height: 44px;
-      transition: color 0.2s ease;
+    /* Inactive Icon: Exact Original Screenshot Grey Icon */
+    .nav-tab-btn .tab-inactive-icon-img {
+      display: block;
+      height: 26px;
+      width: auto;
+      max-width: 30px;
+      object-fit: contain;
+      opacity: 0.95;
       flex-shrink: 0;
+      padding: 4px;
     }
 
     .nav-tab-btn.active .tab-active-pill {
       display: inline-flex;
     }
 
-    .nav-tab-btn.active .tab-inactive-icon {
+    .nav-tab-btn.active .tab-inactive-icon-img {
       display: none;
     }
 
@@ -5478,103 +5482,44 @@
         <!-- ============================================== -->
     <!-- BOTTOM NAVIGATION (EXACT VECTOR & HIGH-RES)     -->
     <!-- ============================================== -->
+        <!-- ============================================== -->
+    <!-- BOTTOM NAVIGATION (EXACT ORIGINAL ICONS & CRISP TEXT) -->
+    <!-- ============================================== -->
     <nav class="bottom-nav-bar" id="bottom-nav-bar">
       <!-- Tab 1: همکلاسی (Home) -->
       <button class="nav-tab-btn active" id="tab-btn-home" onclick="goToScreen('screen-home')" aria-label="همکلاسی">
         <div class="tab-active-pill">
-          <span class="tab-pill-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M10.8 2.8a2 2 0 0 1 2.4 0l7.2 5.4a2 2 0 0 1 .8 1.6V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v4a1 1 0 0 1-1 1H4a2 2 0 0 1-2-2V9.8a2 2 0 0 1 .8-1.6l7.2-5.4z"/>
-            </svg>
-          </span>
+          <img src="nav_home_white.png" class="tab-pill-icon-img" alt="همکلاسی">
           <span class="tab-pill-text">همکلاسی</span>
         </div>
-        <div class="tab-inactive-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M10.8 2.8a2 2 0 0 1 2.4 0l7.2 5.4a2 2 0 0 1 .8 1.6V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v4a1 1 0 0 1-1 1H4a2 2 0 0 1-2-2V9.8a2 2 0 0 1 .8-1.6l7.2-5.4z"/>
-          </svg>
-        </div>
+        <img src="nav_home_grey.png" class="tab-inactive-icon-img" alt="همکلاسی">
       </button>
 
       <!-- Tab 2: چت کلاسی (Chat) -->
       <button class="nav-tab-btn" id="tab-btn-chat" onclick="goToScreen('screen-chat')" aria-label="چت کلاسی">
         <div class="tab-active-pill">
-          <span class="tab-pill-icon">
-            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 9a4 4 0 0 1 4 4v1.5a1.5 1.5 0 0 0 2.2 1.3A6 6 0 0 0 21 12a7 7 0 0 0-7-7c-2.5 0-4.8 1.3-6 3.3"/>
-              <path d="M10 20a6 6 0 0 1-3.6-1.2L3 20l1.2-3.4A6 6 0 1 1 16 14a6 6 0 0 1-6 6z"/>
-              <circle cx="8" cy="14" r="0.8" fill="currentColor"/>
-              <circle cx="10" cy="14" r="0.8" fill="currentColor"/>
-              <circle cx="12" cy="14" r="0.8" fill="currentColor"/>
-            </svg>
-          </span>
+          <img src="nav_chat_white.png" class="tab-pill-icon-img" alt="چت کلاسی">
           <span class="tab-pill-text">چت کلاسی</span>
         </div>
-        <div class="tab-inactive-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 9a4 4 0 0 1 4 4v1.5a1.5 1.5 0 0 0 2.2 1.3A6 6 0 0 0 21 12a7 7 0 0 0-7-7c-2.5 0-4.8 1.3-6 3.3"/>
-            <path d="M10 20a6 6 0 0 1-3.6-1.2L3 20l1.2-3.4A6 6 0 1 1 16 14a6 6 0 0 1-6 6z"/>
-            <circle cx="8" cy="14" r="0.8" fill="currentColor"/>
-            <circle cx="10" cy="14" r="0.8" fill="currentColor"/>
-            <circle cx="12" cy="14" r="0.8" fill="currentColor"/>
-          </svg>
-        </div>
+        <img src="nav_chat_grey.png" class="tab-inactive-icon-img" alt="چت کلاسی">
       </button>
 
       <!-- Tab 3: رسانه (Media) -->
       <button class="nav-tab-btn" id="tab-btn-media" onclick="goToScreen('screen-media')" aria-label="رسانه">
         <div class="tab-active-pill">
-          <span class="tab-pill-icon">
-            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2.5" y="7" width="19" height="14" rx="4.5"/>
-              <path d="M8.5 2.5l3.5 4.5 3.5-4.5"/>
-              <path d="M8.5 14l2.5-2 2 4 2.5-2"/>
-            </svg>
-          </span>
+          <img src="nav_media_white.png" class="tab-pill-icon-img" alt="رسانه">
           <span class="tab-pill-text">رسانه</span>
         </div>
-        <div class="tab-inactive-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2.5" y="7" width="19" height="14" rx="4.5"/>
-            <path d="M8.5 2.5l3.5 4.5 3.5-4.5"/>
-            <path d="M8.5 14l2.5-2 2 4 2.5-2"/>
-          </svg>
-        </div>
+        <img src="nav_media_grey.png" class="tab-inactive-icon-img" alt="رسانه">
       </button>
 
       <!-- Tab 4: تقویم (Calendar) -->
       <button class="nav-tab-btn" id="tab-btn-calendar" onclick="goToScreen('screen-calendar')" aria-label="تقویم">
         <div class="tab-active-pill">
-          <span class="tab-pill-icon">
-            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="17" rx="4"/>
-              <line x1="16" y1="2" x2="16" y2="6"/>
-              <line x1="8" y1="2" x2="8" y2="6"/>
-              <line x1="3" y1="10" x2="21" y2="10"/>
-              <circle cx="8" cy="14" r="1.2" fill="currentColor"/>
-              <circle cx="12" cy="14" r="1.2" fill="currentColor"/>
-              <circle cx="16" cy="14" r="1.2" fill="currentColor"/>
-              <circle cx="8" cy="17.5" r="1.2" fill="currentColor"/>
-              <circle cx="12" cy="17.5" r="1.2" fill="currentColor"/>
-              <circle cx="16" cy="17.5" r="1.2" fill="currentColor"/>
-            </svg>
-          </span>
+          <img src="nav_cal_white.png" class="tab-pill-icon-img" alt="تقویم">
           <span class="tab-pill-text">تقویم</span>
         </div>
-        <div class="tab-inactive-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="17" rx="4"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-            <circle cx="8" cy="14" r="1.2" fill="currentColor"/>
-            <circle cx="12" cy="14" r="1.2" fill="currentColor"/>
-            <circle cx="16" cy="14" r="1.2" fill="currentColor"/>
-            <circle cx="8" cy="17.5" r="1.2" fill="currentColor"/>
-            <circle cx="12" cy="17.5" r="1.2" fill="currentColor"/>
-            <circle cx="16" cy="17.5" r="1.2" fill="currentColor"/>
-          </svg>
-        </div>
+        <img src="nav_cal_grey.png" class="tab-inactive-icon-img" alt="تقویم">
       </button>
     </nav>
 
