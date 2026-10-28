@@ -195,13 +195,114 @@
 
     .chat-top-header {
       background: var(--primary-teal);
-      padding: calc(10px + env(safe-area-inset-top, 0px)) 12px 12px 12px;
+      padding: calc(10px + env(safe-area-inset-top, 0px)) 12px 10px 12px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       flex-shrink: 0;
       box-sizing: border-box;
       width: 100%;
+    }
+    .chat-action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      direction: rtl;
+      width: 100%;
+    }
+    .chat-logo-wrap {
+      display: flex;
+      align-items: center;
+    }
+    .chat-brand-logo {
+      height: 28px;
+      max-width: 130px;
+      object-fit: contain;
+    }
+    .chat-buttons-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      direction: rtl;
+    }
+    .chat-sq-btn {
+      width: 42px;
+      height: 42px;
+      background: rgba(0, 0, 0, 0.08);
+      border: none;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+    .chat-sq-btn:active {
+      background: rgba(0, 0, 0, 0.16);
+      transform: scale(0.95);
+    }
+    .chat-search-bar {
+      width: 100%;
+      height: 48px;
+      background: #00a2a2;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      box-sizing: border-box;
+      direction: rtl;
+    }
+    .chat-search-input {
+      flex: 1;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #ffffff;
+      font-family: 'IRANSans', var(--font-family);
+      font-size: 14px;
+      text-align: right;
+      direction: rtl;
+      padding: 0;
+    }
+    .chat-search-input::placeholder {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      opacity: 1;
+    }
+    .chat-search-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-right: 6px;
+    }
+    .chat-empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: auto 0;
+    }
+    .chat-empty-img {
+      width: 310px;
+      max-width: 86vw;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .chat-empty-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: #b0bec5;
+      font-family: 'IRANSans', var(--font-family);
+      direction: rtl;
+      letter-spacing: -0.2px;
+      text-align: center;
     }
 
     .account-top-header,
@@ -323,6 +424,30 @@
       align-items: center;
       justify-content: center;
       padding: 6px;
+    }
+
+    
+    .sub-header-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      direction: rtl;
+      user-select: none;
+    }
+    .header-help-icon {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      cursor: pointer;
+      flex-shrink: 0;
+      vertical-align: middle;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAAM3ElEQVR4nO2b6VNcxxXFf82iQSABkgwI7ZZsWXbsyPGmbFWp5O9OJfmWipPItrzE1oqQkEAgCxgQIGBuPpx75/W8eQMDwlmquFWvZnuv+/bpc5e+3ZM4IDGzBCSgx69Uushe2x7PXuNq+GWApZSsw7OHcpDSaYZ2FWdAs42UUuNANOrcV/T3k7DjdYAI+vf4V42U0vaBaNXaTwJ6va+m2Ryayk8ke2KEz04PO8yImQ0BI34dB4aAo8AAcAToy/ptAJvABrAOrAErwDKwBCyllF516CeYeCCm0tftjRkIQdOtinuGgEngol+TwDhwkgKYmvdrCIR1NOhF4EdgFpgBHgIPzWy27H8chF7/2ABe2yS7BiKlZGbWQDNQVuwocAo4C7wJvO2vZ4AxChCOIVb0IiC2EBvqiAWLwBzw2J89icCYI2OH99/IHPZry64NZR67jYJmdhIN9DxwCQ3+kn8+hcziiN/eoNXhGYWzjfcgYJaBeeA+MA08AKaAJ8BCSmmlWx27lW6A6EHM2c6jgpkdA64BH/j1LjKHN4BBRNdVRPsfgRfI/l8ikwCZySAwjGY/TGgAsea5X3eBr/36FriXUmqappn1IkC39xvGuzENox2EEUT/T4EbwHXEhhG/ZRXN6AyaxTkf0Aqa8S00Cf0+6GEE4CRwDpnYhL8/B5z230dwhpnZVEppAyCltG1moeu+pCMQzoSg2rZ/N+hKvQ18BHwCvO+K19CsP0U2PgU8ckDWfOBHUAQZ9G42EWMWEP2PId9wCbFrHIFzCrHuGAJtGBgxs0fIVDZLE5Xrvn8g8jBJK8oTPvjf+OsV4ATwCtH3X4i+dx2MRQfgJHDBATvvzyTEkmkHbdpBqTkA57z9nwNX/bt3/dlT3uY/gFvAsy503zsQIbm9mdko8I6D8HvkH/oRC+4BXwJ/c+XupZTqZlbzgV9Es/wzH9y4NzuL2LGOzGgWMSj5YK8i01pyQM55O5GbACyb2WIWUWw/0aQJRHjebPDm3/cDo8Bl4GPgMzQzfWgmvgK+QEy4BXyXObJBH8ynwC+QH5nw9kCzn5DprSNQZ53Ss2a2hvzJJookwY4J4ENkcgvACw+xq+U0P0DZzUxyRuSUyhENx/gJcoxX/bnnwF+BPyE2PAWeBQgO4HXgD8DvkGkc9faXva9+NMODiPK9yKHe9r6XgTvI9J4gxqw5qOPIb8z7fd8gc1ym1SQiPHcNRIBRXkmOIUrf8NdhNHM3gT8DfwRu5+HM5ZIrGg51AIXRGZRA9SI7P4fAPY1m/7GZzaSUVn0W581sBTne567jEGLlJAJ7CUWjVWC5pEvkLjtKn5mljDblhGnIFX0f0XIS5QE/AJ8jk7hdiul9aOZH/TpKQe1wqM/QJLxJwYph4C1/P+5ghN2vAWue2b7hoB133S4jFr0AnprZk5RS5CldSyyA8qpQDKgH0e8K8B5yeL0+mH86CA8rmJC83QaKGg8QnZ87CN85EAP+3Qiy+aMovA76VZUYvcj6H0Y+5jRy3M+QGd1FzGsOhWyCSxPfBkQ4k3CQiVbEL/jnBR/I5z6oFxXKRp1iDdnsTR/kHGLSfTSDJ73Nef8czDGKGkeLpJS2zOwpcspDyK8EQ4JNY2UgYuA7RZN8SZzLkDd+2Rt/wxWccwBuIVtf9cZrtK4Ct5EfmEZ2C5qxqZTSois1QpFi17z9DWR6L/2eqH/2+oBeIZbd92cuITZMUiRi581sAVjxzDOf/Y7+oo9q9E84CFcRK2rIxqdRzjAF1MOpmvLbKLZuoVDY8IHN+3crKaVlvz/af4eCbZuIYQvIZCIh2iZz6imldTObd3Buo2gy6W1cQBFuATnXjZIZNMt9VUBUMWKUYjV5CoWvWQfgScxqSfJ0fBvYcG/fU0p/R5HjvYHC4FkHagaB/LjcfqlmSUppw/OGaVS3uIB8zrjrPINAfV7SsSMjwp7LctwVPIvy+xVk79N542aWdrK7lJIFCGbWY2YTKAL9yq9riG3TyJd84f1UNudthE9bR2x7hHKYdeRAzyEzOVbVRiddOwExhNCdoDCLx95h2DxVYXcHcEaRQ/sUgfAB8j2LCIC/AH/3PsrS3OMoUb2OmBp6HXWdx30MVVIJRicgIg8Y9nuWvMMFZCZFq1IsX+BE+CzLacSGX6KV6wVvewYB8TnwQ0ppqeLZbarrpBuu0yyarD7X+wTFWqRF3YrvoEph99QDFIXXBjKN52j2XnkhpNEhEUtAT2bXcY0hU7iO6IsrP4Wc3r2UUt11KFecyqE9rg0KB7uK2DBMUdzpGoiqiNFLEdYG/XPUFaOwUpXsVDmhPJpESJ7MfpvCHSQCuaxb7uUNWvKdBvILdb9eoYk9RmuJsCuponAvSnvz0nsUWTeArW4KHqV7PMLSQDnCEZRx3kLZ4PM8suy2lM4SpAjV665jlOxqFFXulkc7tVkFRJ7EhGx7R1tUs6EsVUCtIn/wrfcbqfJdnA1uclEl76aoEnnLpusYu2Kd8qOO0nU5fw/Sacm7iAYdv08B36OEKCJRDvKuS+eDlCogwqbzAkeg3C3SVQOIMn3kISvIrpul/LI5ddFPVNj7ad0r6Za5TakCYhtR7ZU3aH5fza++Lqo+VbY4iOL7JeQjhih8z7qZrZXqIB2zwMx/9KHoMODvQ/cNqne/OoLbCYh88dNAAMROVY2ikpVLKN6SDmcyitYBN7ytKTSLL9FqcaGivTYwSuEzwvxxBO4WYtoqpXxnN2kDIqXUMLMIS6ve2TG05hgFjlRs/5cVrgJiAC29z3g7WwiMYaC/gl3lNqrKBTWKpXgwLDaQ1yt02JERVT+uIee2jJAeodhkaYnPWfk8T66q2nyJluIPEQMe+edlip2vnZROFUWVGkU9YhgBsYiSrLUu2mxKJyBWXck5RLtYzEyS5fCxkULr7LVUujKZQ+FyETm32Nt8gMAoSzmEJgRG7puOUyRpQ8gRz7nuq1RLx3pE1Q91FPNnvKMxBMQFZCLSrKhHVA2iLM/QmuKe91lHM1enOxq37MKb2QDFBvQkMr1YHD5BvmK3NpvSCYhFZL+xoXKWogJ0xmsKS+WiR75GqGizjkygBznkV7F3uYP0eMG2pU33DRNoYi4iQOoI7AdoWb8nIKq8P2im7qPF0GMURYa94ysIkONZfSD8RH60sCybrtxySqneBQj5wZRmm2Z2BPmFq36d8fujNHgH+Z8Vv79stnsyjVW0tL2PmLGAPP4E2k94gMB57CvGJrUjTW4bVebt9yBWUSUfRWW+j1CpbxRN5hPX9VFKKa9M5Wza3TTyLT9f9NQRG+KwxiRixXsImIjX9VKbDbyalA+I9mpyFWtaaoplEHzPZBKV+j5DhZ4+NGl3HYj5cpsRbXZazOWMyLf8Ip94hpzbd8hpXkE2+THyI898Q6W8sxR0jkE1NA6rSsLiNTexRvZcLid88B87GGMoZ/ge7b0+pH1iWvxWp2y4r0OVF39o1cweo33FOAlzAVEynNOPZpbvdlnsNO2Sird9V7ERHd/H9uD7DsKHyJE3EGNvolXt3H52uaA9swzq9rhC24hq36LS13FkkyeRjUasPuUbL/N5qW2v55nKfsSBiZM0b6F91N8iJ1lDIHyFap138A0nN6HGHpbzLUDkVMyTpCXvZBsBMeYKnQJ+jRKZM6jI8o2Z3fG9yoOQE2h98iFiwnUEwhBKnL6m2IOdo5iYnNldrULzjZOyVw9ab6Id6U1XLCrE1/z9JxQF00GgZmb3S5476N1WgI0UvbT30e9tX0XMi3Na5xET5igOptxCe7CVi6xuWbljYcbMesJeU0qLZvYDihwgHxFHh66hhdkYyjHuuW+JOudLtBrc8PJaJElRTzjq+cEQYt0J5IveQkcRrnrbUdC5RXE6ZyoHwYHdc0GnYw2v6kDWLofJjvig51BqPkVxuGMeRZkossapuqgnxPHCcWRm59CO1Zj3109R8f4SmcOXKHFaKDvI/Rwm6whE1mgVdUfY/XhhHCV+neOFEYLnUIi8SeETmscLXadK0+tWuqlZJqDXV33bACmlJTP73n9fR8vqOYpF2ZC/1ijWAau0ltFy0wizGEGgDCLA9nrgdN91zm4ZkW+25L9VHUG+6J+jWBKl9V4fcKwbQukor21RHCqrI3O6h+j/gP/2EeSqDisSnp/iUPp9dLDkoX+3VI4M3Z6Y60b2CkTMbKNiMVT+m0LUCcZQeO0GiBcoW52h2PLf7W8K+z5/nct+GNHDzn9cGaT440psv8WfVgKEsOfYNohdtHXkUOsokVvulB/YAf9x5VBc9sSIXOw/9+e2vNjT3AA+aBa8DhD5Evr//u+Oh+Kyb0aUpeJgSD6L5de2xytemwUdOJgQuZMcGBDQbi777KOtvnhoCodyKIdyKP8j8m/xL/rYVN4r4QAAAABJRU5ErkJggg==') no-repeat center / contain;
+    }
+    .header-help-icon:active {
+      transform: scale(0.9);
+      opacity: 0.8;
     }
 
     .sub-header-title {
@@ -942,6 +1067,178 @@
       font-weight: 500;
       font-family: 'IRANSans', var(--font-family);
       text-align: left;
+    }
+
+    
+    /* ==========================================================
+       EXAM SCHEDULE SCREEN (برنامه امتحانی & جزئیات امتحان)
+       ========================================================== */
+    #exams-screen-body {
+      padding: 7px 7px calc(24px + env(safe-area-inset-bottom, 0px)) 7px !important;
+      background: #eaeff0 !important;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-sizing: border-box;
+    }
+    .exam-card-box {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 8px 8px 14px 8px;
+      margin: 0 !important;
+      width: 100%;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      direction: rtl;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border: 1px solid rgba(0, 0, 0, 0.025);
+    }
+    .exam-card-box:active {
+      transform: scale(0.985);
+    }
+    .exam-card-header {
+      background: #c2d6d8;
+      border-radius: 14px;
+      padding: 8px 12px 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      direction: rtl;
+      box-sizing: border-box;
+      min-height: 64px;
+    }
+    .exam-card-header-right {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+      text-align: right;
+    }
+    .exam-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #243137;
+      font-family: 'IRANSans', var(--font-family);
+      letter-spacing: -0.2px;
+    }
+    .exam-card-badges {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      direction: rtl;
+    }
+    .exam-badge {
+      border-radius: 14px;
+      padding: 2px 8.5px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'IRANSans', var(--font-family);
+      direction: rtl;
+    }
+    .exam-badge-dot {
+      width: 4.5px;
+      height: 4.5px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: inline-block;
+    }
+    .exam-badge-orange {
+      background: #ff7a30;
+    }
+    .exam-badge-teal {
+      background: #00c2c2;
+    }
+    .exam-card-header-left {
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .exam-more-dots {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      padding: 2px 4px;
+    }
+    .exam-more-dots span {
+      width: 4px;
+      height: 4px;
+      background: #00c2c2;
+      border-radius: 50%;
+      display: block;
+    }
+    .exam-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      padding: 0 8px 2px 8px;
+      direction: rtl;
+    }
+    .exam-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      direction: rtl;
+      font-family: 'IRANSans', var(--font-family);
+    }
+    .exam-row-label {
+      color: #9aa7ad;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: right;
+    }
+    .exam-row-value {
+      color: #37474f;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: left;
+      direction: rtl;
+    }
+
+    /* Screen: Exam Details (جزئیات امتحان - EXACT image-1.png) */
+    #screen-exam-detail .screen-body {
+      padding: 0;
+      background: #f2f7f8;
+    }
+    .exam-detail-list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background: #f2f7f8;
+    }
+    .exam-detail-item {
+      padding: 12px 18px 14px 18px;
+      border-bottom: 1px solid #e1eaec;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      background: #f2f7f8;
+      direction: rtl;
+      text-align: right;
+      box-sizing: border-box;
+    }
+    .exam-detail-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #00bcc2;
+      font-family: 'IRANSans', var(--font-family);
+      margin: 0;
+      text-align: right;
+    }
+    .exam-detail-val {
+      font-size: 13px;
+      font-weight: 500;
+      color: #2d3436;
+      font-family: 'IRANSans', var(--font-family);
+      margin: 0;
+      text-align: right;
     }
 
     /* Screen: Grade Details (جزئیات نمره - EXACT 131.PNG) */
@@ -3766,10 +4063,12 @@
     <section class="screen" id="screen-chat">
       <header class="chat-top-header">
         <div class="chat-action-row">
-          <div class="chat-status-msg">... در حال اتصال</div>
+          <div class="chat-logo-wrap">
+            <img src="clean_logo_white.png" alt="همکلاسی hamkelasi" class="chat-brand-logo">
+          </div>
           <div class="chat-buttons-wrap">
             <button class="chat-sq-btn" onclick="triggerToast('ایجاد گفتگوی جدید')" aria-label="چت جدید">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
@@ -3784,19 +4083,18 @@
         </div>
 
         <div class="chat-search-bar">
-          <input type="text" class="chat-search-input" placeholder="جستجو کنید...">
+          <input type="text" class="chat-search-input" placeholder="جستجو کنید..." dir="rtl">
           <div class="chat-search-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="7.5"></circle>
               <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
             </svg>
           </div>
         </div>
       </header>
-      <main class="screen-body" style="display:flex; align-items:center; justify-content:center;">
-        <div style="text-align:center;">
-          <div class="loading-spinner"></div>
-          <p style="font-size:12.5px; color:#888;">در حال بارگذاری گفتگوهای کلاسی...</p>
+      <main class="screen-body" style="background:#ffffff; display:flex; flex-direction:column; align-items:center; justify-content:center; padding-bottom:calc(80px + env(safe-area-inset-bottom, 0px));">
+        <div class="chat-empty-state">
+          <img src="chat_empty_full_exact.png" alt="مکالمه ای برای نمایش وجود ندارد" class="chat-empty-img">
         </div>
       </main>
     </section>
@@ -4033,7 +4331,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">برنامه هفتگی</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">برنامه هفتگی</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای برنامه هفتگی')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left" style="width:38px;"></div>
       </header>
 
@@ -4072,7 +4373,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">مدیریت پیام‌ها</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">مدیریت پیام‌ها</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای مدیریت پیام‌ها')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left">
           <button class="header-icon-btn" onclick="triggerToast('عملیات پیام‌ها')">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><circle cx="12" cy="5" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="19" r="2.2"/></svg>
@@ -4088,80 +4392,10 @@
 
       <main class="screen-body no-nav-padding" style="position:relative;">
                 <div class="messages-list-wrap" id="messages-list-container">
-          <div class="msg-box-card" onclick="openMessageDetailById('1')">
-            <div class="msg-box-top">
-              <button class="msg-dots-btn" onclick="event.stopPropagation(); openMessageDetailById('1')" aria-label="بیشتر">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2">
-                  <circle cx="12" cy="5" r="2.2"></circle>
-                  <circle cx="12" cy="12" r="2.2"></circle>
-                  <circle cx="12" cy="19" r="2.2"></circle>
-                </svg>
-              </button>
-              <div class="msg-top-right">
-                <div class="msg-title-area">
-                  <h3 class="msg-subject">لزوم تکمیل آزمون غربالگری</h3>
-                  <div class="msg-badges-row">
-                    <span class="msg-new-badge">
-                      <span class="pill-dot"></span>
-                      <span>پیام جدید</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="msg-avatar-wrap">
-                  <img src="msg_avatar_saber.png" alt="صابر پورحسن (مشاور)" class="msg-avatar-img">
-                </div>
-              </div>
-            </div>
-            <div class="msg-box-bottom">
-              <div class="msg-meta-row">
-                <span class="msg-meta-val">۱۲:۵۹ یکشنبه ۱ شهریور ۱۴۰۵</span>
-                <span class="msg-meta-label">تاریخ و زمان</span>
-              </div>
-              <div class="msg-meta-row">
-                <span class="msg-meta-val">صابر پورحسن (مشاور)</span>
-                <span class="msg-meta-label">فرستنده</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="msg-box-card" onclick="openMessageDetailById('2')">
-            <div class="msg-box-top">
-              <button class="msg-dots-btn" onclick="event.stopPropagation(); openMessageDetailById('2')" aria-label="بیشتر">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2">
-                  <circle cx="12" cy="5" r="2.2"></circle>
-                  <circle cx="12" cy="12" r="2.2"></circle>
-                  <circle cx="12" cy="19" r="2.2"></circle>
-                </svg>
-              </button>
-              <div class="msg-top-right">
-                <div class="msg-title-area">
-                  <h3 class="msg-subject">برنامه امتحانی ۴۵ روزه دوم</h3>
-                  <div class="msg-badges-row">
-                    <span class="msg-new-badge">
-                      <span class="pill-dot"></span>
-                      <span>پیام جدید</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="msg-avatar-wrap">
-                  <img src="msg_avatar_naser.png" alt="ناصر فرجی (مسئول آموزش)" class="msg-avatar-img">
-                </div>
-              </div>
-            </div>
-            <div class="msg-box-bottom">
-              <div class="msg-meta-row">
-                <span class="msg-meta-val">۰۸:۰۳ سه شنبه ۵ اسفند ۱۴۰۴</span>
-                <span class="msg-meta-label">تاریخ و زمان</span>
-              </div>
-              <div class="msg-meta-row">
-                <span class="msg-meta-val">ناصر فرجی (مسئول آموزش)</span>
-                <span class="msg-meta-label">فرستنده</span>
-              </div>
-            </div>
-          </div>
+          <!-- Rendered dynamically by renderMessagesList -->
         </div>
 
-        <!-- Squircle FAB Button with inner Box+Plus icon matching 126.png -->
+        <!-- Squircle FAB<!-- Squircle FAB Button with inner Box+Plus icon matching 126.png -->
         <button class="msg-fab-btn" onclick="showNewMessageForm()" aria-label="پیام جدید">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
@@ -4188,7 +4422,10 @@
             </svg>
           </button>
         </div>
-        <h1 class="sub-header-title">جزئیات پیام</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">جزئیات پیام</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای جزئیات پیام')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left">
           <button class="header-icon-btn" onclick="openMessageDetailMoreOptions()" aria-label="بیشتر">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff">
@@ -4218,7 +4455,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">پیام جدید</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">پیام جدید</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای پیام جدید')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left" style="width:38px;"></div>
       </header>
 
@@ -4277,11 +4517,14 @@
     <section class="screen" id="screen-exam">
       <header class="sub-app-header">
         <div class="header-col-right">
-          <button class="sub-back-btn" onclick="goToScreen('screen-home')">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          <button class="sub-back-btn" onclick="goToScreen('screen-home')" aria-label="بازگشت">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">برنامه امتحانی</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">برنامه امتحانی</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای برنامه امتحانی')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left">
           <button class="header-icon-btn" onclick="triggerToast('جستجو در امتحانات')">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -4295,9 +4538,31 @@
         <button class="sub-tab-item active" id="tab-exam-30" onclick="switchExamTabUI('30')">۳۰ روز آینده</button>
       </div>
 
-      <main class="screen-body no-nav-padding" style="display:flex; align-items:center; justify-content:center;">
-        <div class="empty-state-view">
-          <img src="empty_state_full.png" alt="موردی یافت نشد!" class="empty-illustration-img">
+      <main class="screen-body no-nav-padding" id="exams-screen-body">
+        <!-- Rendered dynamically by switchExamTabUI -->
+      </main>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SCREEN: EXAM DETAIL (جزئیات امتحان - EXACT image-1.png) -->
+    <!-- ============================================== -->
+    <section class="screen" id="screen-exam-detail">
+      <header class="sub-app-header">
+        <div class="header-col-right">
+          <button class="sub-back-btn" onclick="goToScreen('screen-exam')" aria-label="بازگشت">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">جزئیات امتحان</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای جزئیات امتحان')" title="راهنما" aria-label="راهنما"></span>
+        </div>
+        <div class="header-col-left"></div>
+      </header>
+
+      <main class="screen-body no-nav-padding" style="padding:0; background:#f2f7f8;">
+        <div class="exam-detail-list" id="exam-detail-items-container">
+          <!-- Populated by JS openExamDetail -->
         </div>
       </main>
     </section>
@@ -4312,7 +4577,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">گزارش ها</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">گزارش ها</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای گزارش ها')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left"></div>
       </header>
 
@@ -4368,7 +4636,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">محتوای آموزشی</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">محتوای آموزشی</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای محتوای آموزشی')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left">
           <button class="header-icon-btn" onclick="triggerToast('منوی محتوا')" aria-label="عملیات">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><circle cx="12" cy="5" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="19" r="2.2"/></svg>
@@ -4409,7 +4680,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">نمرات</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">نمرات</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای نمرات')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left">
           <button class="header-icon-btn" onclick="triggerToast('جستجو در نمرات')">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -4424,108 +4698,7 @@
       </div>
 
             <main class="screen-body no-nav-padding" id="grades-screen-body">
-        <div class="grades-list-container">
-          <div class="grade-box-card" onclick="openGradeDetailById('1')">
-            <div class="grade-box-top">
-              <div class="grade-top-right">
-                <h3 class="grade-subject-title">فیزیک ۲ (ریاضی)</h3>
-                <span class="grade-status-badge"><span class="pill-dot"></span>عادی</span>
-              </div>
-              <button class="grade-dots-btn" onclick="event.stopPropagation(); openGradeDetailById('1')" aria-label="جزئیات نمره">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2"><circle cx="12" cy="5" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="19" r="2.2"/></svg>
-              </button>
-            </div>
-            <div class="grade-box-bottom">
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">نوع امتحان</span>
-                <span class="grade-meta-val">پرسش کلاسی</span>
-              </div>
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">تاریخ</span>
-                <span class="grade-meta-val">دوشنبه ۱۳ مهر ۱۴۰۵</span>
-              </div>
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">نمره</span>
-                <span class="grade-meta-val">۱۹</span>
-              </div>
-            </div>
-          </div>
-          <div class="grade-box-card" onclick="openGradeDetailById('2')">
-            <div class="grade-box-top">
-              <div class="grade-top-right">
-                <h3 class="grade-subject-title">شیمی ۲</h3>
-                <span class="grade-status-badge"><span class="pill-dot"></span>عادی</span>
-              </div>
-              <button class="grade-dots-btn" onclick="event.stopPropagation(); openGradeDetailById('2')" aria-label="جزئیات نمره">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2"><circle cx="12" cy="5" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="19" r="2.2"/></svg>
-              </button>
-            </div>
-            <div class="grade-box-bottom">
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">نوع امتحان</span>
-                <span class="grade-meta-val">کوییز</span>
-              </div>
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">تاریخ</span>
-                <span class="grade-meta-val">چهارشنبه ۸ مهر ۱۴۰۵</span>
-              </div>
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">نمره</span>
-                <span class="grade-meta-val">۴</span>
-              </div>
-            </div>
-          </div>
-          <div class="grade-box-card" onclick="openGradeDetailById('3')">
-            <div class="grade-box-top">
-              <div class="grade-top-right">
-                <h3 class="grade-subject-title">هندسه ۲</h3>
-                <span class="grade-status-badge"><span class="pill-dot"></span>عادی</span>
-              </div>
-              <button class="grade-dots-btn" onclick="event.stopPropagation(); openGradeDetailById('3')" aria-label="جزئیات نمره">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2"><circle cx="12" cy="5" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="19" r="2.2"/></svg>
-              </button>
-            </div>
-            <div class="grade-box-bottom">
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">نوع امتحان</span>
-                <span class="grade-meta-val">پرسش کلاسی</span>
-              </div>
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">تاریخ</span>
-                <span class="grade-meta-val">شنبه ۵ مهر ۱۴۰۵</span>
-              </div>
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">نمره</span>
-                <span class="grade-meta-val">۲۰</span>
-              </div>
-            </div>
-          </div>
-          <div class="grade-box-card" onclick="openGradeDetailById('4')">
-            <div class="grade-box-top">
-              <div class="grade-top-right">
-                <h3 class="grade-subject-title">حسابان ۱</h3>
-                <span class="grade-status-badge"><span class="pill-dot"></span>عادی</span>
-              </div>
-              <button class="grade-dots-btn" onclick="event.stopPropagation(); openGradeDetailById('4')" aria-label="جزئیات نمره">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2"><circle cx="12" cy="5" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="19" r="2.2"/></svg>
-              </button>
-            </div>
-            <div class="grade-box-bottom">
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">نوع امتحان</span>
-                <span class="grade-meta-val">مستمر ترم اول</span>
-              </div>
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">تاریخ</span>
-                <span class="grade-meta-val">دوشنبه ۳۰ شهریور ۱۴۰۵</span>
-              </div>
-              <div class="grade-meta-row">
-                <span class="grade-meta-label">نمره</span>
-                <span class="grade-meta-val">۱۸.۵</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Rendered dynamically by switchGradeTabUI -->
       </main>
     </section>
     <!-- ============================================== -->
@@ -4538,7 +4711,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">جزئیات نمره</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">جزئیات نمره</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای جزئیات نمره')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left"></div>
       </header>
 
@@ -4560,7 +4736,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">موارد انضباطی و تشویقی</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">موارد انضباطی و تشویقی</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای موارد انضباطی و تشویقی')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left" style="gap:6px;">
           <button class="header-icon-btn" onclick="triggerToast('فیلتر')">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
@@ -4617,7 +4796,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">کارنامه‌ها</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">کارنامه‌ها</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای کارنامه‌ها')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left"></div>
       </header>
 
@@ -4643,7 +4825,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">حساب مالی</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">حساب مالی</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای حساب مالی')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left"></div>
       </header>
 
@@ -4701,7 +4886,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">تکالیف</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">تکالیف</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای تکالیف')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left">
           <button class="header-icon-btn" onclick="triggerToast('جستجو در تکالیف')">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -4733,7 +4921,10 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="account-header-title">حساب کاربری</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="account-header-title">حساب کاربری</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای حساب کاربری')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="account-header-left"></div>
       </header>
 
@@ -5030,7 +5221,10 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
-        <h1 class="sub-header-title">پنل مدیریت محتوا</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">پنل مدیریت محتوا</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای پنل مدیریت محتوا')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left">
           <span style="font-size:11px; background:rgba(255,255,255,0.25); color:#fff; padding:3px 8px; border-radius:10px; font-weight:700;">مدیر</span>
         </div>
@@ -5052,6 +5246,7 @@
             <button class="admin-pill-btn" id="pill-create-sched" onclick="switchAdminCreateSection('sched')">برنامه کلاسی</button>
             <button class="admin-pill-btn" id="pill-create-disc" onclick="switchAdminCreateSection('disc')">مورد انضباطی</button>
             <button class="admin-pill-btn" id="pill-create-hw" onclick="switchAdminCreateSection('hw')">تکلیف جدید</button>
+            <button class="admin-pill-btn" id="pill-create-exam" onclick="switchAdminCreateSection('exam')">برنامه امتحانی</button>
           </div>
 
           <!-- Form 1: Add Grade -->
@@ -5249,6 +5444,57 @@
             </div>
             <button class="admin-submit-btn" onclick="adminSubmitHomework()">ثبت تکلیف جدید</button>
           </div>
+
+          <!-- Form 6: Add Exam Schedule -->
+          <div class="admin-form-card" id="form-create-exam" style="display:none;">
+            <div class="admin-form-card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00bcc2" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>ثبت برنامه امتحانی جدید</span>
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">شناسه امتحان (کد)</label>
+              <input type="text" id="adm-exam-id" class="admin-input-control" placeholder="۴۴۹۷" value="۴۴۹۷">
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">نام درس (تایتل کارت)</label>
+              <input type="text" id="adm-exam-subject" class="admin-input-control" placeholder="تعلیمات دینی ۲" value="تعلیمات دینی ۲">
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">نام کامل درس و رشته</label>
+              <input type="text" id="adm-exam-fullsubject" class="admin-input-control" placeholder="تعلیمات دینی ۲ (ریاضی و تجربی)" value="تعلیمات دینی ۲ (ریاضی و تجربی)">
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">نام معلم</label>
+              <input type="text" id="adm-exam-teacher" class="admin-input-control" placeholder="آقای آزادی" value="آقای آزادی">
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">نوع آزمون</label>
+              <input type="text" id="adm-exam-type" class="admin-input-control" placeholder="آزمون ۴۵ روزه اول" value="آزمون ۴۵ روزه اول">
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">تاریخ آزمون</label>
+              <input type="text" id="adm-exam-date" class="admin-input-control" placeholder="شنبه ۹ آبان ۱۴۰۵" value="شنبه ۹ آبان ۱۴۰۵">
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">شمارش معکوس / روز مانده</label>
+              <input type="text" id="adm-exam-countdown" class="admin-input-control" placeholder="۳ روز آینده" value="۳ روز آینده">
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">برچسب وضعیت</label>
+              <select id="adm-exam-status" class="admin-input-control">
+                <option value="عادی">عادی</option>
+                <option value="نهایی">نهایی</option>
+                <option value="مستمر">مستمر</option>
+                <option value="هماهنگ">هماهنگ</option>
+              </select>
+            </div>
+            <div class="admin-input-group">
+              <label class="admin-input-label">توضیحات آزمون</label>
+              <input type="text" id="adm-exam-desc" class="admin-input-control" placeholder="نمره از ۲۰" value="نمره از ۲۰">
+            </div>
+            <button class="admin-submit-btn" onclick="adminSubmitExam()">ثبت برنامه امتحانی در سامانه</button>
+          </div>
+
         </div>
 
         <!-- ================= SECTION 2: MANAGE & DELETE ================= -->
@@ -5260,6 +5506,7 @@
             <button class="admin-pill-btn" id="pill-del-sched" onclick="switchAdminDeleteCategory('schedule')">برنامه کلاسی</button>
             <button class="admin-pill-btn" id="pill-del-disc" onclick="switchAdminDeleteCategory('discipline')">انضباطی</button>
             <button class="admin-pill-btn" id="pill-del-hw" onclick="switchAdminDeleteCategory('homework')">تکالیف</button>
+            <button class="admin-pill-btn" id="pill-del-exam" onclick="switchAdminDeleteCategory('exams')">برنامه امتحانی</button>
             <button class="admin-pill-btn" id="pill-del-notif" onclick="switchAdminDeleteCategory('notifications')">رویدادها / اعلانات</button>
           </div>
 
@@ -5289,7 +5536,10 @@
             </svg>
           </button>
         </div>
-        <h1 class="sub-header-title">رویدادها</h1>
+        <div class="sub-header-title-wrap">
+          <h1 class="sub-header-title">رویدادها</h1>
+          <span class="header-help-icon" onclick="triggerToast('راهنمای رویدادها')" title="راهنما" aria-label="راهنما"></span>
+        </div>
         <div class="header-col-left">
           <button class="header-icon-btn" onclick="markAllNotificationsRead()" aria-label="خواندن همه" title="خواندن همه">
             <!-- Envelope with checkmark icon matching 138.png -->
@@ -5304,117 +5554,7 @@
       </header>
 
             <main class="screen-body no-nav-padding" id="notifications-list-container">
-        <div class="notif-card" id="notif-card-notif-1" onclick="markNotificationRead('notif-1')" style="cursor: pointer;">
-          <div class="notif-card-header">
-            <div class="notif-header-right">
-              <h3 class="notif-title">نمره جدید فیزیک ۲ (ریاضی)</h3>
-              <div class="notif-badges-row">
-                <div class="notif-badge-pill notif-badge-new">
-                  <span class="notif-pill-dot"></span>
-                  <span>جدید</span>
-                </div>
-                <div class="notif-badge-pill">
-                  <span class="notif-pill-dot"></span>
-                  <span>امروز</span>
-                </div>
-              </div>
-            </div>
-            <div class="notif-header-left">
-              <button class="notif-more-btn" onclick="event.stopPropagation(); openNotificationOptions('notif-1')" aria-label="بیشتر">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2">
-                  <circle cx="12" cy="5" r="2.2"></circle>
-                  <circle cx="12" cy="12" r="2.2"></circle>
-                  <circle cx="12" cy="19" r="2.2"></circle>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="notif-card-body">
-            <p class="notif-desc">در امتحان آزمون کلاسی فیزیک ۲ در تاریخ سه شنبه ۱۴ مهر ۱۴۰۵</p>
-          </div>
-        </div>
-
-        <div class="notif-card" id="notif-card-notif-chem" onclick="markNotificationRead('notif-chem')" style="cursor: pointer;">
-          <div class="notif-card-header">
-            <div class="notif-header-right">
-              <h3 class="notif-title">نمره جدید شیمی ۲</h3>
-              <div class="notif-badges-row">
-                <div class="notif-badge-pill notif-badge-new">
-                  <span class="notif-pill-dot"></span>
-                  <span>جدید</span>
-                </div>
-                <div class="notif-badge-pill">
-                  <span class="notif-pill-dot"></span>
-                  <span>دیروز</span>
-                </div>
-              </div>
-            </div>
-            <div class="notif-header-left">
-              <button class="notif-more-btn" onclick="event.stopPropagation(); openNotificationOptions('notif-chem')" aria-label="بیشتر">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2">
-                  <circle cx="12" cy="5" r="2.2"></circle>
-                  <circle cx="12" cy="12" r="2.2"></circle>
-                  <circle cx="12" cy="19" r="2.2"></circle>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="notif-card-body">
-            <p class="notif-desc">در امتحان آزمون کلاسی شیمی ۲ در تاریخ چهارشنبه ۲۲ مهر ۱۴۰۵</p>
-          </div>
-        </div>
-
-        <div class="notif-card" id="notif-card-notif-2" onclick="markNotificationRead('notif-2')" style="cursor: pointer;">
-          <div class="notif-card-header">
-            <div class="notif-header-right">
-              <h3 class="notif-title">نمره جدید فیزیک ۲ (ریاضی)</h3>
-              <div class="notif-badges-row">
-                <div class="notif-badge-pill">
-                  <span class="notif-pill-dot"></span>
-                  <span>دیروز</span>
-                </div>
-              </div>
-            </div>
-            <div class="notif-header-left">
-              <button class="notif-more-btn" onclick="event.stopPropagation(); openNotificationOptions('notif-2')" aria-label="بیشتر">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2">
-                  <circle cx="12" cy="5" r="2.2"></circle>
-                  <circle cx="12" cy="12" r="2.2"></circle>
-                  <circle cx="12" cy="19" r="2.2"></circle>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="notif-card-body">
-            <p class="notif-desc">در امتحان پرسش کلاسی فیزیک ۲ در تاریخ دوشنبه ۱۳ مهر ۱۴۰۵</p>
-          </div>
-        </div>
-
-        <div class="notif-card" id="notif-card-notif-3" onclick="markNotificationRead('notif-3')" style="cursor: pointer;">
-          <div class="notif-card-header">
-            <div class="notif-header-right">
-              <h3 class="notif-title">نمره جدید شیمی ۲</h3>
-              <div class="notif-badges-row">
-                <div class="notif-badge-pill">
-                  <span class="notif-pill-dot"></span>
-                  <span>۲ روز پیش</span>
-                </div>
-              </div>
-            </div>
-            <div class="notif-header-left">
-              <button class="notif-more-btn" onclick="event.stopPropagation(); openNotificationOptions('notif-3')" aria-label="بیشتر">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#00bcc2">
-                  <circle cx="12" cy="5" r="2.2"></circle>
-                  <circle cx="12" cy="12" r="2.2"></circle>
-                  <circle cx="12" cy="19" r="2.2"></circle>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="notif-card-body">
-            <p class="notif-desc">در امتحان کوییز شیمی ۲ در تاریخ چهارشنبه ۸ مهر ۱۴۰۵</p>
-          </div>
-        </div>
+        <!-- Rendered dynamically by renderNotificationsScreen -->
       </main>
     </section>
 
@@ -5612,106 +5752,57 @@
       activeDiscTab: 'discipline'
     };
 
-    const scheduleData = [
-      {
-        day: 'شنبه',
-        periods: [
-          { bell: 'زنگ اول', time: '۷:۵۰ - ۹:۱۵', name: 'تربیت بدنی ۲', teacher: 'حبیب نادری', border: 'border-yellow' },
-          { bell: 'زنگ دوم', time: '۹:۳۰ - ۱۱:۰', name: 'ادبیات فارسی ۲', teacher: 'محسن ابراهیم پور', border: 'border-cyan' },
-          { bell: 'زنگ سوم', time: '۱۱:۱۰ - ۱۲:۴۰', name: 'آزمایشگاه علوم تجربی ۲', teacher: 'معلم معلم', border: 'border-yellow' },
-          { bell: 'زنگ سوم', time: '۱۱:۱۰ - ۱۲:۴۰', name: 'زبان خارجی ۲', teacher: 'محمد علیزاده', border: 'border-yellow' },
-          { bell: 'زنگ چهارم', time: '۱۲:۵۵ - ۱۴:۲۰', name: 'حسابان ۱', teacher: 'وحید جوادیفر', border: 'border-cyan' },
-        ]
-      },
-      {
-        day: 'یکشنبه',
-        periods: [
-          { bell: 'زنگ اول', time: '۷:۵۰ - ۹:۱۵', name: 'هندسه ۱', teacher: 'رضا کمالی', border: 'border-cyan' },
-          { bell: 'زنگ دوم', time: '۹:۳۰ - ۱۱:۰', name: 'شیمی ۲', teacher: 'داریوش رضوان', border: 'border-yellow' },
-          { bell: 'زنگ سوم', time: '۱۱:۱۰ - ۱۲:۴۰', name: 'فیزیک ۲', teacher: 'احمدی نیا', border: 'border-cyan' },
-          { bell: 'زنگ چهارم', time: '۱۲:۵۵ - ۱۴:۲۰', name: 'دین و زندگی ۲', teacher: 'محمودی', border: 'border-yellow' },
-        ]
-      },
-      {
-        day: 'دوشنبه',
-        periods: [
-          { bell: 'زنگ اول', time: '۷:۵۰ - ۹:۱۵', name: 'حسابان ۱', teacher: 'وحید جوادیفر', border: 'border-cyan' },
-          { bell: 'زنگ دوم', time: '۹:۳۰ - ۱۱:۰', name: 'عربی زبان قرآن ۲', teacher: 'جعفری', border: 'border-yellow' },
-          { bell: 'زنگ سوم', time: '۱۱:۱۰ - ۱۲:۴۰', name: 'آمار و احتمال', teacher: 'حسینی', border: 'border-cyan' },
-          { bell: 'زنگ چهارم', time: '۱۲:۵۵ - ۱۴:۲۰', name: 'کارگاه کارآفرینی', teacher: 'نیکنام', border: 'border-yellow' },
-        ]
-      },
-      {
-        day: 'سه شنبه',
-        periods: [
-          { bell: 'زنگ اول', time: '۷:۵۰ - ۹:۱۵', name: 'فیزیک ۲', teacher: 'احمدی نیا', border: 'border-cyan' },
-          { bell: 'زنگ دوم', time: '۹:۳۰ - ۱۱:۰', name: 'زمین شناسی', teacher: 'صادقی', border: 'border-yellow' },
-          { bell: 'زنگ سوم', time: '۱۱:۱۰ - ۱۲:۴۰', name: 'زبان انگلیسی ۲', teacher: 'محمد علیزاده', border: 'border-cyan' },
-          { bell: 'زنگ چهارم', time: '۱۲:۵۵ - ۱۴:۲۰', name: 'نگارش ۲', teacher: 'ابراهیم پور', border: 'border-yellow' },
-        ]
-      },
-      {
-        day: 'چهارشنبه',
-        periods: [
-          { bell: 'زنگ اول', time: '۷:۵۰ - ۹:۱۵', name: 'شیمی ۲', teacher: 'داریوش رضوان', border: 'border-yellow' },
-          { bell: 'زنگ دوم', time: '۹:۳۰ - ۱۱:۰', name: 'هندسه ۲', teacher: 'رضا کمالی', border: 'border-cyan' },
-          { bell: 'زنگ سوم', time: '۱۱:۱۰ - ۱۲:۴۰', name: 'تاریخ معاصر', teacher: 'کریمی', border: 'border-yellow' },
-          { bell: 'زنگ چهارم', time: '۱۲:۵۵ - ۱۴:۲۰', name: 'انسان و محیط زیست', teacher: 'قاسمی', border: 'border-cyan' },
-        ]
+    
+    // ==========================================================
+    // LOCALSTORAGE PERSISTENCE SYSTEM (BROWSER STORAGE)
+    // ==========================================================
+    const STORAGE_KEYS = {
+      GRADES: 'hamkelasi_app_grades',
+      MESSAGES: 'hamkelasi_app_messages',
+      NOTIFICATIONS: 'hamkelasi_app_notifications',
+      SCHEDULE: 'hamkelasi_app_schedule',
+      DISCIPLINE: 'hamkelasi_app_discipline',
+      EXAMS: 'hamkelasi_app_exams',
+      HOMEWORK: 'hamkelasi_app_homework'
+    };
+
+    function loadStorageData(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        if (raw !== null && raw !== 'undefined') {
+          return JSON.parse(raw);
+        }
+      } catch(e) {
+        console.error('Error loading key from localStorage:', key, e);
       }
+      return fallback;
+    }
+
+    function saveStorageData(key, data) {
+      try {
+        localStorage.setItem(key, JSON.stringify(data));
+      } catch(e) {
+        console.error('Error saving key to localStorage:', key, e);
+      }
+    }
+
+    // Default empty schedule for week
+    const defaultSchedule = [
+      { day: 'شنبه', periods: [] },
+      { day: 'یکشنبه', periods: [] },
+      { day: 'دوشنبه', periods: [] },
+      { day: 'سه شنبه', periods: [] },
+      { day: 'چهارشنبه', periods: [] }
     ];
 
-    const messagesStore = {
-      rcv: [
-        {
-          id: 1,
-          title: 'لزوم تکمیل آزمون غربالگری',
-          datetime: '۱۲:۵۹ یکشنبه ۱ شهریور ۱۴۰۵',
-          sender: 'صابر پورحسن (مشاور)',
-          receiver: 'امیر حسین خیاط زاده دهخوارقانی',
-          pattern: 'مدیر با دانش آموزان و اولیای مدرسه',
-          code: '۸۶۰۹۳',
-          body: '📌اطلاعیه📣📣 دانش اموزان عزیز توجه داشته باشید که هرچه سریعتر نسبت به تکمیل آزمون غربالگری در سامانه های مدیو اقدام کنید مدت زمان تکمیل ازمونها تا ۱۵شهریور ماه میباشد. از امسال دانش آموزانی که ازمون را تکمیل نکنند به دلیل عدم ارسال لیست انها به سامانه ثبت نام مدرسه، با مشکل مواجه خواهند شد لذا دانش آموزان عزیز جهت جلوگیری از بروز مشکل برای همکاران ما در کلاس بندی دانش اموزان و احتمالا مشکلات به وجود آمده برای شما در ورود به کلاسها هرچه سریعتر نسبت به تکمیل ازمون غربالگری اقدام نمایید. لازم به ذکر است که مراحل تکمیل همانند سالهای گذشته است. ۱.ورود به سامانه my.medu.ir از طریق شماره همراه یکی از والدین ۲.ورود به پنل شخصی دانش اموز ۳.ورود به قسمت نماد ۴.انتخاب ازمون غربالگری ۵.انجام ازمون و ثبت نهایی'
-        },
-        {
-          id: 2,
-          title: 'برنامه امتحانی ۴۵ روزه دوم',
-          datetime: '۰۸:۰۳ سه شنبه ۵ اسفند ۱۴۰۴',
-          sender: 'ناصر فرجی (مسئول آموزش)',
-          body: 'برنامه آزمون‌های مستمر ۴۵ روزه دوم در تابلوی اعلانات قرار گرفت. لطفاً آمادگی لازم را برای امتحانات دروس تخصصی کسب نمایید.'
-        },
-        {
-          id: 3,
-          title: 'برنامه جدید امتحانات ترم اول',
-          datetime: '۱۰:۰۰ چهارشنبه ۱۷ دی ۱۴۰۴',
-          sender: 'ناصر فرجی (مسئول آموزش)',
-          body: 'به علت برودت هوا و تعطیلی روز گذشته، آزمون درس حسابان با یک روز تاخیر در روز شنبه برگزار خواهد شد.'
-        },
-        {
-          id: 4,
-          title: 'سوالات جغرافیا',
-          datetime: '۱۱:۴۲ سه شنبه ۹ دی ۱۴۰۴',
-          sender: 'ناصر فرجی (مسئول آموزش)',
-          body: 'نمونه سوالات امتحانی ترم اول درس جغرافیا در بخش محتوای آموزشی بارگذاری گردید.'
-        },
-        {
-          id: 5,
-          title: 'سوالات و پاسخ درس فیزیک',
-          datetime: '۱۰:۳۴ یکشنبه ۷ دی ۱۴۰۴',
-          sender: 'ناصر فرجی (مسئول آموزش)',
-          body: 'کلید و پاسخ تشریحی آزمون فیزیک ۲ در بخش آزمون‌ها قرار گرفت.'
-        }
-      ],
-      sent: [
-        {
-          id: 101,
-          title: 'درخواست مشاوره تحصیلی',
-          datetime: '۱۴:۲۰ دوشنبه ۱۰ مرداد ۱۴۰۵',
-          sender: 'امیر حسین خیاط زاده',
-          body: 'استاد پورحسن سلام، جهت تعیین وقت مشاوره برنامه ریزی کنکور برای هفته آینده مزاحمتون شدم.'
-        }
-      ]
-    };
+    let scheduleData = loadStorageData(STORAGE_KEYS.SCHEDULE, defaultSchedule);
+    let messagesStore = loadStorageData(STORAGE_KEYS.MESSAGES, { rcv: [], sent: [] });
+    let gradesDataStore = loadStorageData(STORAGE_KEYS.GRADES, []);
+    let notificationsDataStore = loadStorageData(STORAGE_KEYS.NOTIFICATIONS, []);
+    let disciplineStore = loadStorageData(STORAGE_KEYS.DISCIPLINE, []);
+    let homeworkStore = loadStorageData(STORAGE_KEYS.HOMEWORK, []);
+    let examsDataStore = loadStorageData(STORAGE_KEYS.EXAMS, []);
+
 
     // Navigation
     function goBack() {
@@ -5747,6 +5838,8 @@
           if (typeof switchHwTabUI === 'function') switchHwTabUI(appState.activeHwTab || 'all');
         } else if (screenId === 'screen-discipline') {
           if (typeof switchDisciplineTabUI === 'function') switchDisciplineTabUI(appState.activeDiscTab || 'discipline');
+        } else if (screenId === 'screen-exam') {
+          if (typeof switchExamTabUI === 'function') switchExamTabUI(appState.activeExamTab || '30');
         } else if (screenId === 'screen-notifications') {
           if (typeof renderNotificationsScreen === 'function') renderNotificationsScreen();
         } else if (screenId === 'screen-schedule') {
@@ -5962,9 +6055,52 @@
         avatar: 'account_avatar_exact.png'
       };
       messagesStore.sent.unshift(newMsg);
+      saveStorageData(STORAGE_KEYS.MESSAGES, messagesStore);
       triggerToast('پیام شما با موفقیت ارسال شد');
       switchMessagesTab('sent');
       goToScreen('screen-messages');
+    }
+
+    
+    function renderScheduleList() {
+      const container = document.getElementById('schedule-cards-container');
+      if (!container) return;
+      const current = scheduleData[appState.scheduleDay || 0];
+      const dayTitleEl = document.getElementById('sched-active-day');
+      if (dayTitleEl && current) dayTitleEl.textContent = current.day;
+
+      if (!current || !current.periods || current.periods.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state-view" style="padding: 60px 20px; text-align: center;">
+            <img src="empty_state_full.png" alt="موردی یافت نشد!" class="empty-illustration-img">
+            <p style="font-family:'IRANSans',var(--font-family); color:#888; font-size:13px; margin-top:12px;">برنامه کلاسی ثبت نشده است</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = current.periods.map(p => `
+        <div class="schedule-period-card ${p.border || 'border-cyan'}">
+          <div class="period-right-col">
+            <div class="period-title">${p.bell}</div>
+            <div class="period-time">${p.time}</div>
+          </div>
+          <div class="period-left-col">
+            <div class="period-lesson">${p.name}</div>
+            <div class="period-teacher">${p.teacher}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function prevScheduleDay() {
+      appState.scheduleDay = (appState.scheduleDay - 1 + scheduleData.length) % scheduleData.length;
+      renderScheduleList();
+    }
+
+    function nextScheduleDay() {
+      appState.scheduleDay = (appState.scheduleDay + 1) % scheduleData.length;
+      renderScheduleList();
     }
 
     function openSidebarDrawer() {
@@ -5985,56 +6121,7 @@
     // ==========================================================
     // GRADES DATA STORE & SUB-TAB SWITCHER
     // ==========================================================
-    let gradesDataStore = [
-      {
-        id: 1,
-        subject: 'فیزیک ۲ (ریاضی)',
-        status: 'عادی',
-        type: 'پرسش کلاسی',
-        date: 'دوشنبه ۱۳ مهر ۱۴۰۵',
-        score: '۱۹',
-        className: 'یازدهم ریاضی فیزیک ۱',
-        teacher: 'مهدی فتاحی',
-        maxScore: '۲۰.۰۰',
-        objectionStatus: 'غیرمجاز'
-      },
-      {
-        id: 2,
-        subject: 'شیمی ۲',
-        status: 'عادی',
-        type: 'کوییز',
-        date: 'چهارشنبه ۸ مهر ۱۴۰۵',
-        score: '۴',
-        className: 'یازدهم ریاضی فیزیک ۱',
-        teacher: 'داریوش رضوان',
-        maxScore: '۲۰.۰۰',
-        objectionStatus: 'غیرمجاز'
-      },
-      {
-        id: 3,
-        subject: 'هندسه ۲',
-        status: 'عادی',
-        type: 'پرسش کلاسی',
-        date: 'شنبه ۵ مهر ۱۴۰۵',
-        score: '۲۰',
-        className: 'یازدهم ریاضی فیزیک ۱',
-        teacher: 'محمد جلالی',
-        maxScore: '۲۰.۰۰',
-        objectionStatus: 'غیرمجاز'
-      },
-      {
-        id: 4,
-        subject: 'حسابان ۱',
-        status: 'عادی',
-        type: 'مستمر ترم اول',
-        date: 'دوشنبه ۳۰ شهریور ۱۴۰۵',
-        score: '۱۸.۵',
-        className: 'یازدهم ریاضی فیزیک ۱',
-        teacher: 'علی احمدی',
-        maxScore: '۲۰.۰۰',
-        objectionStatus: 'غیرمجاز'
-      }
-    ];
+    // gradesDataStore managed via localStorage
 
     function openGradeDetailById(id) {
       const g = gradesDataStore.find(x => String(x.id) === String(id));
@@ -6184,21 +6271,177 @@
     // ==========================================================
     // EXAM SUB-TAB SWITCHER
     // ==========================================================
+    
+    // ==========================================================
+    // EXAMS DATA SYSTEM & DETAIL VIEW (EXACT 215430.png & image-1.png)
+    // ==========================================================
+    function openExamDetailById(id) {
+      const exam = examsDataStore.find(x => String(x.id) === String(id));
+      if (exam) openExamDetail(exam);
+    }
+
+    function openExamDetail(exam) {
+      if (!exam) return;
+      const container = document.getElementById('exam-detail-items-container');
+      if (!container) return;
+      container.innerHTML = `
+        <div class="exam-detail-item">
+          <span class="exam-detail-label">شناسه</span>
+          <span class="exam-detail-val">${exam.id || '۴۴۹۷'}</span>
+        </div>
+        <div class="exam-detail-item">
+          <span class="exam-detail-label">نام درس</span>
+          <span class="exam-detail-val">${exam.fullSubject || exam.subject}</span>
+        </div>
+        <div class="exam-detail-item">
+          <span class="exam-detail-label">نام معلم</span>
+          <span class="exam-detail-val">${exam.teacher}</span>
+        </div>
+        <div class="exam-detail-item">
+          <span class="exam-detail-label">نوع آزمون</span>
+          <span class="exam-detail-val">${exam.type}</span>
+        </div>
+        <div class="exam-detail-item">
+          <span class="exam-detail-label">تاریخ آزمون</span>
+          <span class="exam-detail-val">${exam.date}</span>
+        </div>
+        <div class="exam-detail-item">
+          <span class="exam-detail-label">توضیحات</span>
+          <span class="exam-detail-val">${exam.desc || 'نمره از ۲۰'}</span>
+        </div>
+      `;
+      goToScreen('screen-exam-detail');
+    }
+
     function switchExamTabUI(tab) {
+      appState.activeExamTab = tab;
       const allBtn = document.getElementById('tab-exam-all');
       const next30Btn = document.getElementById('tab-exam-30');
       if (allBtn) allBtn.classList.toggle('active', tab === 'all');
       if (next30Btn) next30Btn.classList.toggle('active', tab === '30');
-      // Always displays exact empty state illustration as in 108.png
-      const body = document.querySelector('#screen-exam .screen-body');
-      if (body) {
-        body.innerHTML = `
+
+      const container = document.getElementById('exams-screen-body');
+      if (!container) return;
+
+      if (!examsDataStore || examsDataStore.length === 0) {
+        container.style.display = 'flex';
+        container.style.alignItems = 'center';
+        container.style.justifyContent = 'center';
+        container.innerHTML = `
           <div class="empty-state-view">
             <img src="empty_state_full.png" alt="موردی یافت نشد!" class="empty-illustration-img">
           </div>
         `;
+      } else {
+        container.style.display = 'flex';
+        container.style.flexDirection = 'column';
+        container.style.gap = '8px';
+        container.style.alignItems = 'stretch';
+        container.style.justifyContent = 'flex-start';
+        container.innerHTML = examsDataStore.map(e => `
+          <div class="exam-card-box" onclick="openExamDetailById('${e.id}')">
+            <div class="exam-card-header">
+              <div class="exam-card-header-right">
+                <div class="exam-card-title">${e.subject}</div>
+                <div class="exam-card-badges">
+                  ${e.countdown ? `
+                  <span class="exam-badge exam-badge-orange">
+                    <span class="exam-badge-dot"></span>
+                    <span>${e.countdown}</span>
+                  </span>` : ''}
+                  ${e.status ? `
+                  <span class="exam-badge exam-badge-teal">
+                    <span class="exam-badge-dot"></span>
+                    <span>${e.status}</span>
+                  </span>` : ''}
+                </div>
+              </div>
+              <div class="exam-card-header-left" onclick="event.stopPropagation(); openExamDetailById('${e.id}')">
+                <div class="exam-more-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-body">
+              <div class="exam-card-row">
+                <span class="exam-row-label">نوع آزمون</span>
+                <span class="exam-row-value">${e.type}</span>
+              </div>
+              <div class="exam-card-row">
+                <span class="exam-row-label">تاریخ</span>
+                <span class="exam-row-value">${e.date}</span>
+              </div>
+              <div class="exam-card-row">
+                <span class="exam-row-label">معلم</span>
+                <span class="exam-row-value">${e.teacher}</span>
+              </div>
+              <div class="exam-card-row">
+                <span class="exam-row-label">درس</span>
+                <span class="exam-row-value">${e.fullSubject || e.subject}</span>
+              </div>
+            </div>
+          </div>
+        `).join('');
       }
     }
+
+    function adminSubmitExam() {
+      const subject = document.getElementById('adm-exam-subject').value.trim();
+      if (!subject) {
+        triggerToast('لطفاً نام درس را وارد کنید');
+        return;
+      }
+      const newExam = {
+        id: document.getElementById('adm-exam-id').value.trim() || String(Math.floor(1000 + Math.random() * 9000)),
+        subject: subject,
+        fullSubject: document.getElementById('adm-exam-fullsubject').value.trim() || subject,
+        teacher: document.getElementById('adm-exam-teacher').value.trim() || 'دبیر محترم',
+        type: document.getElementById('adm-exam-type').value.trim() || 'آزمون ۴۵ روزه اول',
+        date: document.getElementById('adm-exam-date').value.trim() || 'شنبه ۹ آبان ۱۴۰۵',
+        countdown: document.getElementById('adm-exam-countdown').value.trim() || '۳ روز آینده',
+        status: document.getElementById('adm-exam-status').value || 'عادی',
+        desc: document.getElementById('adm-exam-desc').value.trim() || 'نمره از ۲۰'
+      };
+
+      examsDataStore.unshift(newExam);
+      saveStorageData(STORAGE_KEYS.EXAMS, examsDataStore);
+
+      // Auto-generate notification for newly added exam
+      const newNotif = {
+        id: 'notif-' + Date.now(),
+        title: `برنامه امتحانی: ${newExam.subject}`,
+        badge: 'امروز',
+        desc: `امتحان ${newExam.type} درس ${newExam.subject} در تاریخ ${newExam.date} برگزار خواهد شد.`,
+        unread: true,
+        timestamp: Date.now()
+      };
+      notificationsDataStore.unshift(newNotif);
+      saveStorageData(STORAGE_KEYS.NOTIFICATIONS, notificationsDataStore);
+      renderNotificationsScreen();
+      updateNotificationBadge();
+
+      if (typeof switchExamTabUI === 'function') {
+        switchExamTabUI(appState.activeExamTab || '30');
+      }
+
+      triggerToast(`برنامه امتحان «${subject}» با موفقیت ثبت شد`);
+      switchAdminMainTab('manage');
+      switchAdminDeleteCategory('exams');
+    }
+
+    function adminDeleteExam(id) {
+      examsDataStore = examsDataStore.filter(e => String(e.id) !== String(id));
+      saveStorageData(STORAGE_KEYS.EXAMS, examsDataStore);
+      if (typeof switchExamTabUI === 'function') {
+        switchExamTabUI(appState.activeExamTab || '30');
+      }
+      adminRenderDeleteList();
+      triggerToast('برنامه امتحانی با موفقیت حذف گردید');
+    }
+
 
     function openProfileDialog() {
       closeSidebarDrawer();
@@ -6324,56 +6567,7 @@ function setYear(val) {
     // ==========================================================
     // NOTIFICATIONS DATA STORE & SYSTEM (138.png)
     // ==========================================================
-    let notificationsDataStore = [
-      {
-        id: 'notif-1',
-        title: 'نمره جدید فیزیک ۲ (ریاضی)',
-        badge: 'امروز',
-        desc: 'در امتحان آزمون کلاسی فیزیک ۲ در تاریخ سه شنبه ۱۴ مهر ۱۴۰۵',
-        unread: true,
-        timestamp: Date.now() - 3600000
-      },
-      {
-        id: 'notif-chem',
-        title: 'نمره جدید شیمی ۲',
-        badge: 'دیروز',
-        desc: 'در امتحان آزمون کلاسی شیمی ۲ در تاریخ چهارشنبه ۲۲ مهر ۱۴۰۵',
-        unread: true,
-        timestamp: Date.now() - 43200000
-      },
-      {
-        id: 'notif-2',
-        title: 'نمره جدید فیزیک ۲ (ریاضی)',
-        badge: 'دیروز',
-        desc: 'در امتحان پرسش کلاسی فیزیک ۲ در تاریخ دوشنبه ۱۳ مهر ۱۴۰۵',
-        unread: false,
-        timestamp: Date.now() - 86400000
-      },
-      {
-        id: 'notif-3',
-        title: 'نمره جدید شیمی ۲',
-        badge: '۲ روز پیش',
-        desc: 'در امتحان کوییز شیمی ۲ در تاریخ چهارشنبه ۸ مهر ۱۴۰۵',
-        unread: false,
-        timestamp: Date.now() - 172800000
-      },
-      {
-        id: 'notif-4',
-        title: 'نمره جدید نگارش ۱',
-        badge: null,
-        desc: 'در امتحان پایانی ترم دوم نگارش ۱ در تاریخ چهارشنبه ۳۱ تیر ۱۴۰۵',
-        unread: false,
-        timestamp: Date.now() - 5000000000
-      },
-      {
-        id: 'notif-5',
-        title: 'نمره جدید عربی ۱ (ریاضی و تجربی)',
-        badge: null,
-        desc: 'در امتحان پایانی ترم دوم عربی ۱ در تاریخ چهارشنبه ۳۱ تیر ۱۴۰۵',
-        unread: false,
-        timestamp: Date.now() - 5000000000
-      }
-    ];
+    // notificationsDataStore managed via localStorage
 
     function renderNotificationsScreen() {
       const container = document.getElementById('notifications-list-container');
@@ -6430,6 +6624,7 @@ function setYear(val) {
       const notif = notificationsDataStore.find(n => n.id === id);
       if (notif && notif.unread) {
         notif.unread = false;
+        saveStorageData(STORAGE_KEYS.NOTIFICATIONS, notificationsDataStore);
         updateNotificationBadge();
         renderNotificationsScreen();
       }
@@ -6450,6 +6645,7 @@ function setYear(val) {
 
     function markAllNotificationsRead() {
       notificationsDataStore.forEach(n => n.unread = false);
+      saveStorageData(STORAGE_KEYS.NOTIFICATIONS, notificationsDataStore);
       updateNotificationBadge();
       renderNotificationsScreen();
       triggerToast('همه رویدادها خوانده شدند');
@@ -6584,28 +6780,9 @@ function setYear(val) {
       deleteCategory: 'grades' // 'grades', 'messages', 'schedule', 'discipline', 'homework'
     };
 
-    let disciplineStore = [
-      {
-        id: 1,
-        type: 'discipline',
-        title: 'سایر موارد',
-        date: 'چهارشنبه ۱۴ آبان ۱۴۰۴',
-        author: 'داریوش رضوان',
-        desc: 'ثبت شده در ساعت اول توسط داریوش رضوان',
-        course: 'شیمی ۱'
-      }
-    ];
+    // disciplineStore managed via localStorage
 
-    let homeworkStore = [
-      {
-        id: 1,
-        title: 'حل مسائل فصل دوم',
-        course: 'فیزیک ۲ (ریاضی)',
-        dueDate: 'شنبه ۱۹ مهر ۱۴۰۵',
-        teacher: 'مهدی فتاحی',
-        desc: 'تمرینات پایان فصل صفحه ۵۲ در دفتر حل شود.'
-      }
-    ];
+    // homeworkStore managed via localStorage
 
     function openAdminSecretPanel() {
       goToScreen('screen-admin-panel');
@@ -6626,7 +6803,7 @@ function setYear(val) {
 
     function switchAdminCreateSection(sec) {
       adminState.createSection = sec;
-      const secs = ['grade', 'msg', 'sched', 'disc', 'hw'];
+      const secs = ['grade', 'msg', 'sched', 'disc', 'hw', 'exam'];
       secs.forEach(s => {
         const pill = document.getElementById('pill-create-' + s);
         const form = document.getElementById('form-create-' + s);
@@ -6637,9 +6814,9 @@ function setYear(val) {
 
     function switchAdminDeleteCategory(cat) {
       adminState.deleteCategory = cat;
-      const cats = ['grades', 'messages', 'schedule', 'discipline', 'homework', 'notifications'];
+      const cats = ['grades', 'messages', 'schedule', 'discipline', 'homework', 'exams', 'notifications'];
       cats.forEach(c => {
-        const idMap = { 'grades': 'grade', 'messages': 'msg', 'schedule': 'sched', 'discipline': 'disc', 'homework': 'hw', 'notifications': 'notif' };
+        const idMap = { 'grades': 'grade', 'messages': 'msg', 'schedule': 'sched', 'discipline': 'disc', 'homework': 'hw', 'exams': 'exam', 'notifications': 'notif' };
         const pill = document.getElementById('pill-del-' + idMap[c]);
         if (pill) pill.classList.toggle('active', c === cat);
       });
@@ -6667,6 +6844,7 @@ function setYear(val) {
       };
 
       gradesDataStore.unshift(newGrade);
+      saveStorageData(STORAGE_KEYS.GRADES, gradesDataStore);
       // Auto-generate notification for newly added grade
       const newNotif = {
         id: 'notif-' + Date.now(),
@@ -6677,6 +6855,7 @@ function setYear(val) {
         timestamp: Date.now()
       };
       notificationsDataStore.unshift(newNotif);
+      saveStorageData(STORAGE_KEYS.NOTIFICATIONS, notificationsDataStore);
       renderNotificationsScreen();
       updateNotificationBadge();
 
@@ -6703,6 +6882,7 @@ function setYear(val) {
       };
 
       messagesStore.rcv.unshift(newMsg);
+      saveStorageData(STORAGE_KEYS.MESSAGES, messagesStore);
       renderMessagesList(messagesStore.rcv);
 
       // Auto-generate notification for newly added message
@@ -6715,6 +6895,7 @@ function setYear(val) {
         timestamp: Date.now()
       };
       notificationsDataStore.unshift(newNotif);
+      saveStorageData(STORAGE_KEYS.NOTIFICATIONS, notificationsDataStore);
       renderNotificationsScreen();
       updateNotificationBadge();
 
@@ -6750,6 +6931,7 @@ function setYear(val) {
         teacher: teacher || 'معلم محترم',
         border: border
       });
+      saveStorageData(STORAGE_KEYS.SCHEDULE, scheduleData);
 
       renderScheduleList();
       triggerToast(`درس «${name}» در برنامه ${day} ثبت شد`);
@@ -6775,6 +6957,7 @@ function setYear(val) {
         desc: desc
       });
 
+      saveStorageData(STORAGE_KEYS.DISCIPLINE, disciplineStore);
       renderDisciplineScreen();
       triggerToast('مورد انضباطی با موفقیت ثبت شد');
       switchAdminMainTab('manage');
@@ -6814,6 +6997,30 @@ function setYear(val) {
       if (!container) return;
       const cat = adminState.deleteCategory;
       container.innerHTML = '';
+
+      
+      if (cat === 'exams') {
+        if (examsDataStore.length === 0) {
+          container.innerHTML = '<div style="text-align:center; padding:30px; color:#888;">هیچ برنامه امتحانی ثبت نشده است</div>';
+          return;
+        }
+        examsDataStore.forEach(e => {
+          const card = document.createElement('div');
+          card.className = 'admin-delete-card';
+          card.innerHTML = `
+            <div class="admin-delete-info">
+              <div class="admin-delete-title">${e.subject} (${e.type})</div>
+              <div class="admin-delete-meta">${e.date} • دبیر: ${e.teacher} • شناسه: ${e.id}</div>
+            </div>
+            <button class="admin-trash-btn" onclick="adminDeleteExam('${e.id}')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              <span>حذف</span>
+            </button>
+          `;
+          container.appendChild(card);
+        });
+        return;
+      }
 
       if (cat === 'grades') {
         if (gradesDataStore.length === 0) {
@@ -6953,9 +7160,11 @@ function setYear(val) {
     function adminDeleteMessage(id, box) {
       if (box === 'rcv') {
         messagesStore.rcv = messagesStore.rcv.filter(m => m.id !== id);
+        saveStorageData(STORAGE_KEYS.MESSAGES, messagesStore);
         renderMessagesList(messagesStore.rcv);
       } else {
         messagesStore.sent = messagesStore.sent.filter(m => m.id !== id);
+        saveStorageData(STORAGE_KEYS.MESSAGES, messagesStore);
         renderMessagesList(messagesStore.sent);
       }
       adminRenderDeleteList();
@@ -6966,6 +7175,7 @@ function setYear(val) {
       const targetDay = scheduleData.find(d => d.day === day);
       if (targetDay && targetDay.periods[pIdx]) {
         targetDay.periods.splice(pIdx, 1);
+        saveStorageData(STORAGE_KEYS.SCHEDULE, scheduleData);
         renderScheduleList();
         adminRenderDeleteList();
         triggerToast('زنگ برنامه با موفقیت حذف شد');
@@ -6974,6 +7184,7 @@ function setYear(val) {
 
     function adminDeleteDiscipline(id) {
       disciplineStore = disciplineStore.filter(d => d.id !== id);
+      saveStorageData(STORAGE_KEYS.DISCIPLINE, disciplineStore);
       renderDisciplineScreen();
       adminRenderDeleteList();
       triggerToast('مورد انضباطی با موفقیت حذف گردید');
@@ -6981,6 +7192,7 @@ function setYear(val) {
 
     function adminDeleteHomework(id) {
       homeworkStore = homeworkStore.filter(h => h.id !== id);
+      saveStorageData(STORAGE_KEYS.HOMEWORK, homeworkStore);
       renderHomeworkScreen();
       adminRenderDeleteList();
       triggerToast('تکلیف با موفقیت حذف گردید');
@@ -7072,5 +7284,5 @@ function setYear(val) {
       </div>
     </div>
 
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a51411bd7b69e5fb',t:'MTc5MzEyODk0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a51c47d7cc37d09f',t:'MTc5MzIxNTA0Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
